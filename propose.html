@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정책 제안 · 김부겸 2026 대구시장 후보</title>
+<meta name="description" content="대구 시민이 직접 제안하는 정책. 한 줄부터 긴 제안까지, 김부겸 캠프가 경청하겠습니다.">
+<meta property="og:title" content="정책 제안 · Kim Bu-Gyeom 2026">
+<meta property="og:description" content="대구 시민 한 분의 목소리가 한 줄의 공약이 됩니다.">
+<meta property="og:image" content="https://kbg-xi.vercel.app/kbg-portrait.jpg">
+<meta property="og:url" content="https://kbg-xi.vercel.app/propose">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1638F0;
+  --blue-deep:#0A1F99;
+  --cream:#F5F2E6;
+  --cream-ink:#2A2618;
+  --amber:#F2A63A;
+  --ink:#080814;
+  --transition:.45s cubic-bezier(.16,1,.3,1);
+  --grid-line:rgba(245,242,230,.06);
+  --grid-line-dark:rgba(22,56,240,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard Variable','Space Grotesk',system-ui,sans-serif;
+  background:var(--blue);
+  color:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  font-size:17px;
+  line-height:1.6;
+  letter-spacing:-.005em;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+.bg-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:44px 44px}
+
+/* NAV */
+nav.topnav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;
+  background:rgba(10,20,120,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(245,242,230,.08)}
+nav.topnav .brand{display:flex;align-items:center;gap:.6rem}
+nav.topnav .brand .logomark{width:26px;height:26px;border:1.5px solid var(--cream);display:grid;place-items:center;font-family:'Archivo Black',sans-serif;font-size:.7rem}
+nav.topnav .brand strong{font-family:'Archivo Black',sans-serif;font-size:.95rem;letter-spacing:.08em}
+nav.topnav .back{font-family:'Space Grotesk',sans-serif;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;padding:.55rem .9rem;border:1px solid var(--cream);transition:var(--transition)}
+nav.topnav .back:hover{background:var(--cream);color:var(--blue)}
+
+/* LAYOUT */
+main.wrap{max-width:1100px;margin:0 auto;padding:8rem 1.5rem 6rem;display:grid;grid-template-columns:1fr;gap:3rem}
+@media(min-width:960px){main.wrap{grid-template-columns:.9fr 1.6fr;gap:5rem;align-items:start}}
+
+/* HERO aside */
+.hero-aside{position:sticky;top:6rem;display:flex;flex-direction:column;gap:1.2rem}
+@media(max-width:960px){.hero-aside{position:static}}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.hanja{font-family:'DM Serif Display',serif;font-size:1rem;letter-spacing:.4em;opacity:.55}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,6vw,3.8rem);line-height:.95;letter-spacing:-.015em}
+.hero-h1 .kr{display:block;font-family:'Pretendard Variable',sans-serif;font-weight:800;font-size:clamp(1.4rem,2.5vw,1.85rem);margin-top:.7rem;line-height:1.25;letter-spacing:-.01em}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.4vw,1.2rem);line-height:1.55;max-width:420px;opacity:.9;margin-top:.5rem}
+.hero-meta{display:flex;flex-direction:column;gap:.45rem;font-family:'Space Grotesk',monospace;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;opacity:.65;margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(245,242,230,.2)}
+
+/* FORM panel */
+.form-panel{background:var(--cream);color:var(--cream-ink);padding:2.5rem 2.25rem;border:1px solid var(--cream);position:relative;overflow:hidden}
+.form-panel::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(10,31,153,.025) 2px,rgba(10,31,153,.025) 4px)}
+.form-header{border-bottom:2px solid var(--blue-deep);padding-bottom:1rem;margin-bottom:1.75rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;position:relative}
+.form-header h2{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1;color:var(--blue-deep);text-transform:uppercase}
+.form-header h2 small{display:block;font-family:'Pretendard Variable',sans-serif;font-size:.95rem;font-weight:700;margin-top:.25rem;letter-spacing:-.005em}
+.form-header .ref{font-family:'Space Grotesk',monospace;font-size:.6rem;letter-spacing:.18em;opacity:.6;text-transform:uppercase;white-space:nowrap}
+
+form.form-body{display:flex;flex-direction:column;gap:1.25rem;position:relative}
+fieldset{border:0;padding:0;margin:0}
+label.field{display:flex;flex-direction:column;gap:.4rem}
+label.field .lab{font-family:'Archivo Black',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);display:flex;align-items:center;gap:.5rem}
+label.field .lab .kr{font-family:'Pretendard Variable',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:-.005em;text-transform:none;color:var(--cream-ink);opacity:.88}
+label.field .lab .req{font-size:.65rem;color:var(--amber);font-family:'Space Grotesk',sans-serif;letter-spacing:.1em}
+input[type=text],input[type=email],input[type=tel],select,textarea{
+  width:100%;padding:.85rem 1rem;background:transparent;border:1px solid rgba(10,31,153,.25);color:var(--cream-ink);
+  font-family:'Pretendard Variable',sans-serif;font-size:1rem;line-height:1.45;border-radius:0;
+  transition:var(--transition)
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:rgba(22,56,240,.05);box-shadow:inset 0 0 0 1px var(--blue)}
+textarea{min-height:160px;resize:vertical}
+select{appearance:none;-webkit-appearance:none;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%230A1F99'/></svg>") no-repeat right 1rem center;padding-right:2.2rem}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media(max-width:620px){.grid-2{grid-template-columns:1fr}}
+
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.2rem}
+.chips input[type=checkbox]{position:absolute;opacity:0;pointer-events:none}
+.chips label{font-family:'Pretendard Variable',sans-serif;font-size:.88rem;padding:.5rem .9rem;border:1px solid rgba(10,31,153,.3);cursor:pointer;user-select:none;transition:var(--transition)}
+.chips label:hover{border-color:var(--blue)}
+.chips input[type=checkbox]:checked + label{background:var(--blue);color:var(--cream);border-color:var(--blue)}
+
+.consent{display:flex;gap:.7rem;align-items:flex-start;font-family:'Pretendard Variable',sans-serif;font-size:.85rem;line-height:1.55;padding:1rem;background:rgba(22,56,240,.04);border-left:3px solid var(--blue)}
+.consent input{margin-top:.2rem;accent-color:var(--blue)}
+.consent a{text-decoration:underline}
+
+.form-actions{display:flex;gap:.8rem;align-items:center;margin-top:.5rem;flex-wrap:wrap}
+.btn{font-family:'Archivo Black',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:1rem 1.5rem;border:1px solid var(--blue-deep);cursor:pointer;transition:var(--transition);background:var(--blue-deep);color:var(--cream)}
+.btn:hover{background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:transparent;color:var(--blue-deep)}
+.btn.ghost:hover{background:var(--blue-deep);color:var(--cream)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.form-footnote{margin-top:1rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;opacity:.75}
+.sys-code{position:absolute;bottom:.9rem;right:1rem;font-family:'Space Grotesk',monospace;font-size:.52rem;opacity:.5;letter-spacing:.15em}
+
+/* SUCCESS */
+.success{display:none;padding:2.5rem;text-align:center;background:var(--cream);color:var(--cream-ink);border:1px solid var(--blue-deep)}
+.success.show{display:block;animation:fade .6s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.success .mark{font-family:'DM Serif Display',serif;font-size:5rem;color:var(--amber);line-height:.8}
+.success h3{font-family:'DM Serif Display',serif;font-size:2rem;margin:.8rem 0 .4rem;color:var(--blue-deep)}
+.success p{font-family:'Pretendard Variable',sans-serif;font-size:1rem;max-width:480px;margin:0 auto 1.5rem;opacity:.85}
+.success .next{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+
+/* PROCESS STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(245,242,230,.2);margin-top:2.5rem}
+.step{padding:1.5rem 1.2rem;border-right:1px solid rgba(245,242,230,.2);display:flex;flex-direction:column;gap:.5rem}
+.step:last-child{border-right:none}
+.step .n{font-family:'Space Grotesk',monospace;font-size:.7rem;letter-spacing:.2em;color:var(--amber);opacity:.9}
+.step h4{font-family:'Archivo Black',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.step h4 .kr{display:block;font-family:'Pretendard Variable',sans-serif;font-size:.95rem;font-weight:700;margin-top:.25rem;letter-spacing:-.005em;text-transform:none}
+.step p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;opacity:.8;line-height:1.45}
+@media(max-width:720px){.steps{grid-template-columns:1fr}.step{border-right:none;border-bottom:1px solid rgba(245,242,230,.2)}.step:last-child{border-bottom:none}}
+
+/* FOOTER */
+footer.mini{padding:2.5rem 1.5rem 2rem;border-top:1px solid rgba(245,242,230,.15);font-family:'Space Grotesk',monospace;font-size:.62rem;letter-spacing:.12em;opacity:.55;text-transform:uppercase;text-align:center}
+
+.error{color:#C0392B;font-family:'Pretendard Variable',sans-serif;font-size:.85rem;margin-top:.2rem}
+.count{font-family:'Space Grotesk',monospace;font-size:.65rem;opacity:.55;text-align:right;margin-top:.2rem}
+</style>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<nav class="topnav" role="navigation" aria-label="주요 메뉴">
+  <div class="brand">
+    <span class="logomark">KBG</span>
+    <strong>KIM BU-GYEOM · 政策 제안</strong>
+  </div>
+  <a class="back" href="/">← 메인으로</a>
+</nav>
+
+<main class="wrap">
+
+  <!-- Hero aside -->
+  <aside class="hero-aside">
+    <span class="hanja">政 策 提 案</span>
+    <span class="eyebrow">POLICY PROPOSAL · CITIZEN'S FLOOR</span>
+    <h1 class="hero-h1">
+      Write<br>Your Daegu.
+      <span class="kr">대구를 바꿀 한 줄,<br>시민이 직접 씁니다.</span>
+    </h1>
+    <p class="hero-sub">
+      “대구 시민들 이야기를 직접 듣겠습니다.” — 김부겸.
+      제안 한 건 한 건을 캠프가 분류·검토해 응답드립니다. 짧은 아이디어도, 긴 설계도도 환영합니다.
+    </p>
+    <div class="hero-meta">
+      <span>REF · DGU-26-CIT-PROPOSAL</span>
+      <span>CAMPAIGN · KBG 2026</span>
+      <span>AUTHORIZED BY KBG</span>
+    </div>
+
+    <div class="steps" aria-label="제안 처리 3단계">
+      <div class="step">
+        <span class="n">01</span>
+        <h4>SUBMIT<span class="kr">제안 접수</span></h4>
+        <p>본 양식으로 접수되면 캠프 정책팀이 즉시 확인합니다.</p>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <h4>REVIEW<span class="kr">정책팀 검토</span></h4>
+        <p>분야·지역별로 분류, 공약 연계 가능성을 판단합니다.</p>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <h4>REPLY<span class="kr">회신·공개</span></h4>
+        <p>의미 있는 제안은 캠프 공식 채널을 통해 응답·공유됩니다.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Form panel -->
+  <section class="form-panel" aria-labelledby="form-head">
+    <header class="form-header">
+      <h2 id="form-head">Proposal<small>시민 제안서</small></h2>
+      <span class="ref">FORM · DGU-26-001</span>
+    </header>
+
+    <form class="form-body" id="propose" novalidate>
+
+      <div class="grid-2">
+        <label class="field">
+          <span class="lab">NAME <span class="kr">성함</span> <span class="req">*</span></span>
+          <input type="text" name="name" required maxlength="40" autocomplete="name" placeholder="예: 김부겸">
+        </label>
+        <label class="field">
+          <span class="lab">CONTACT <span class="kr">연락처</span> <span class="req">*</span></span>
+          <input type="text" name="contact" required maxlength="60" placeholder="전화번호 또는 이메일">
+        </label>
+      </div>
+
+      <div class="grid-2">
+        <label class="field">
+          <span class="lab">DISTRICT <span class="kr">거주 구·군</span></span>
+          <select name="district">
+            <option value="">선택하지 않음</option>
+            <option>군위군</option>
+            <option>북구</option>
+            <option>동구</option>
+            <option>서구</option>
+            <option>중구</option>
+            <option>남구</option>
+            <option>수성구</option>
+            <option>달서구</option>
+            <option>달성군</option>
+            <option>대구 외 지역</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="lab">AGE <span class="kr">연령대</span></span>
+          <select name="age">
+            <option value="">선택하지 않음</option>
+            <option>10대</option>
+            <option>20대</option>
+            <option>30대</option>
+            <option>40대</option>
+            <option>50대</option>
+            <option>60대</option>
+            <option>70대 이상</option>
+          </select>
+        </label>
+      </div>
+
+      <fieldset class="field">
+        <span class="lab">TOPIC <span class="kr">관심 분야 (복수 선택)</span></span>
+        <div class="chips" role="group" aria-label="관심 분야">
+          <input type="checkbox" id="t1" name="topics" value="AI·디지털"><label for="t1">AI · 디지털</label>
+          <input type="checkbox" id="t2" name="topics" value="청년·일자리"><label for="t2">청년 · 일자리</label>
+          <input type="checkbox" id="t3" name="topics" value="공공기관 이전"><label for="t3">공공기관 이전</label>
+          <input type="checkbox" id="t4" name="topics" value="행정통합·인프라"><label for="t4">행정통합 · 인프라</label>
+          <input type="checkbox" id="t5" name="topics" value="교육·문화"><label for="t5">교육 · 문화</label>
+          <input type="checkbox" id="t6" name="topics" value="교통·주거"><label for="t6">교통 · 주거</label>
+          <input type="checkbox" id="t7" name="topics" value="복지·의료"><label for="t7">복지 · 의료</label>
+          <input type="checkbox" id="t8" name="topics" value="환경·안전"><label for="t8">환경 · 안전</label>
+          <input type="checkbox" id="t9" name="topics" value="기타"><label for="t9">기타</label>
+        </div>
+      </fieldset>
+
+      <label class="field">
+        <span class="lab">TITLE <span class="kr">제안 제목</span> <span class="req">*</span></span>
+        <input type="text" name="title" required maxlength="80" placeholder="예: 수성알파시티와 연계한 청년 창업 기숙사">
+      </label>
+
+      <label class="field">
+        <span class="lab">PROPOSAL <span class="kr">제안 내용</span> <span class="req">*</span></span>
+        <textarea name="body" required maxlength="2000" placeholder="제안 배경, 현재 문제, 해결 아이디어, 기대 효과 등을 자유롭게 적어주세요. 한 줄도 괜찮습니다."></textarea>
+        <div class="count"><span id="cc">0</span> / 2000</div>
+      </label>
+
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>
+          이 제안과 함께 수집되는 성함·연락처·거주지·연령대를 <strong>김부겸 캠프 정책팀이 검토·회신 목적</strong>으로만 이용하는 것에 동의합니다.
+          수집된 정보는 2026년 선거일로부터 30일 이내 파기됩니다.
+        </span>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">제안 보내기 →</button>
+        <button type="reset" class="btn ghost">초기화</button>
+      </div>
+
+      <p class="form-footnote">
+        ※ 현재 임시 접수 채널은 이메일(<a href="mailto:campaign@kimbugyeom.kr"><strong>campaign@kimbugyeom.kr</strong></a>)입니다. 제출 시 메일 클라이언트가 열리고 자동으로 내용이 채워집니다.
+      </p>
+
+      <div class="sys-code">SYS.REF · DGU-26-REV.A</div>
+    </form>
+
+    <div class="success" id="done" role="status" aria-live="polite">
+      <div class="mark">✓</div>
+      <h3>제안이 접수되었습니다.</h3>
+      <p>이메일 클라이언트가 열려 있다면 <strong>보내기</strong>를 눌러 완료해 주세요. 정책팀이 확인 후 공식 채널로 응답드립니다.</p>
+      <div class="next">
+        <a class="btn" href="/">메인으로</a>
+        <button type="button" class="btn ghost" onclick="window.location.reload()">한 건 더 제안</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mini">
+  © MMXXVI · Kim Bu-Gyeom for Daegu Mayor · 더불어민주당 공식 후보 · BUILT IN DAEGU
+</footer>
+
+<script>
+const form = document.getElementById('propose');
+const done = document.getElementById('done');
+const body = form.querySelector('textarea[name="body"]');
+const cc = document.getElementById('cc');
+body.addEventListener('input', () => { cc.textContent = body.value.length; });
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!form.reportValidity()) return;
+  const fd = new FormData(form);
+  const topics = fd.getAll('topics');
+  const name = fd.get('name') || '';
+  const contact = fd.get('contact') || '';
+  const district = fd.get('district') || '';
+  const age = fd.get('age') || '';
+  const title = fd.get('title') || '';
+  const bodyText = fd.get('body') || '';
+
+  const subject = `[시민 제안] ${title}`;
+  const lines = [
+    `제안자 · ${name}`,
+    `연락처 · ${contact}`,
+    district ? `거주 · ${district}` : null,
+    age ? `연령 · ${age}` : null,
+    topics.length ? `분야 · ${topics.join(', ')}` : null,
+    '',
+    '— 제안 내용 —',
+    bodyText,
+    '',
+    '— 접수 경로 · https://kbg-xi.vercel.app/propose —'
+  ].filter(Boolean).join('\n');
+
+  const mailto = `mailto:campaign@kimbugyeom.kr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
+  window.location.href = mailto;
+
+  form.style.display = 'none';
+  done.classList.add('show');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+</script>
+</body>
+</html>
