@@ -118,8 +118,9 @@ nav.topnav .nav-cta:hover{background:var(--cream);color:var(--blue)}
 @media(max-width:960px){.interactive-zone{grid-template-columns:1fr;gap:1.75rem;padding-top:2rem}}
 
 /* Map */
-.map-container{position:relative;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.map-container{position:relative;width:100%;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
 svg#daegu-map{width:100%;height:100%;max-width:760px;filter:drop-shadow(0 0 30px rgba(245,242,230,0.15))}
+@supports not (aspect-ratio:4/5){.map-container{padding-bottom:125%;height:0;position:relative}.map-container>*{position:absolute;inset:0}}
 .district-path{fill:var(--blue-deep);stroke:var(--cream);stroke-width:1.5;stroke-linejoin:miter;transition:var(--transition);cursor:pointer;transform-origin:center;outline:none!important;-webkit-tap-highlight-color:transparent}
 .district-path:hover,.district-path.active{fill:var(--cream)}
 .district-path:focus,.district-path:focus-visible,.district-path:active{outline:none!important;box-shadow:none!important}
@@ -323,8 +324,6 @@ footer.site .legal{max-width:1280px;margin:2rem auto 0;display:flex;justify-cont
 /* ======== UTILITY ======== */
 .contact-footnote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;opacity:.7;margin-top:auto}
 
-/* ======== ASPECT RATIO FALLBACK ======== */
-@supports not (aspect-ratio:1/1){.map-container{padding-bottom:100%;height:0;position:relative}.map-container>*{position:absolute;inset:0}}
 </style>
 </head>
 <body>
@@ -400,43 +399,43 @@ footer.site .legal{max-width:1280px;margin:2rem auto 0;display:flex;justify-cont
         <div class="map-hint" aria-hidden="true">TAP / CLICK ANY DISTRICT ←</div>
         <div class="compass">N<br>↑</div>
         <div class="scale"><span class="bar"></span>10 KM</div>
-        <svg id="daegu-map" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="대구광역시 9개 구·군 인터랙티브 지도">
+        <svg id="daegu-map" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="대구광역시 9개 구·군 인터랙티브 지도">
           <g id="map-group">
-            <!-- 군위군 (북단 전폭) -->
-            <path id="gunwi" class="district-path" d="M50,60 L750,60 L750,180 L50,180 Z"/>
-            <text x="400" y="128" class="district-label">GUNWI · 군위</text>
+            <!-- 군위군 (북쪽 섬, 팔공산 분리) -->
+            <path id="gunwi" class="district-path" d="M230,60 L370,50 L510,60 L610,85 L665,130 L685,210 L640,265 L550,290 L430,300 L320,290 L220,275 L150,225 L130,165 L155,105 L195,70 Z"/>
+            <text x="410" y="180" class="district-label">GUNWI · 군위</text>
 
-            <!-- 북구 (중북부) -->
-            <path id="buk" class="district-path" d="M50,180 L540,180 L540,320 L50,320 Z"/>
-            <text x="295" y="258" class="district-label">BUK · 북구</text>
+            <!-- 북구 (본체 상단 밴드) -->
+            <path id="buk" class="district-path" d="M60,355 L545,360 L555,490 L395,505 L205,495 L60,500 Z"/>
+            <text x="290" y="432" class="district-label">BUK · 북구</text>
 
-            <!-- 동구 (동쪽 종단) -->
-            <path id="dong" class="district-path" d="M540,180 L750,180 L750,540 L540,540 Z"/>
-            <text x="645" y="365" class="district-label">DONG · 동구</text>
+            <!-- 동구 (동쪽 종단 기둥) -->
+            <path id="dong" class="district-path" d="M545,360 L745,345 L770,500 L745,720 L555,710 L555,490 Z"/>
+            <text x="650" y="540" class="district-label">DONG · 동구</text>
 
             <!-- 서구 -->
-            <path id="seo" class="district-path" d="M50,320 L220,320 L220,420 L50,420 Z"/>
-            <text x="135" y="375" class="district-label">SEO · 서구</text>
+            <path id="seo" class="district-path" d="M60,500 L205,495 L215,615 L60,610 Z"/>
+            <text x="135" y="560" class="district-label small">SEO · 서구</text>
 
             <!-- 중구 (중앙 소) -->
-            <path id="jung" class="district-path" d="M220,320 L380,320 L380,420 L220,420 Z"/>
-            <text x="300" y="376" class="district-label small">JUNG · 중구</text>
+            <path id="jung" class="district-path" d="M205,495 L395,505 L385,615 L215,615 Z"/>
+            <text x="300" y="562" class="district-label small">JUNG · 중구</text>
 
-            <!-- 수성구 (동남 L자) -->
-            <path id="suseong" class="district-path" d="M380,320 L540,320 L540,540 L750,540 L750,660 L380,660 Z"/>
-            <text x="580" y="608" class="district-label">SUSEONG · 수성</text>
+            <!-- 수성구 (동남 대형 L자) -->
+            <path id="suseong" class="district-path" d="M395,505 L555,490 L555,710 L745,720 L720,835 L400,830 L400,730 L385,615 Z"/>
+            <text x="580" y="780" class="district-label">SUSEONG · 수성</text>
 
-            <!-- 남구 -->
-            <path id="nam" class="district-path" d="M220,420 L380,420 L380,520 L220,520 Z"/>
-            <text x="300" y="476" class="district-label small">NAM · 남구</text>
+            <!-- 남구 (중앙 하단 소) -->
+            <path id="nam" class="district-path" d="M215,615 L385,615 L400,730 L195,725 Z"/>
+            <text x="300" y="678" class="district-label small">NAM · 남구</text>
 
             <!-- 달서구 (서남 L자) -->
-            <path id="dalseo" class="district-path" d="M50,420 L220,420 L220,520 L380,520 L380,660 L50,660 Z"/>
-            <text x="135" y="545" class="district-label">DALSEO · 달서</text>
+            <path id="dalseo" class="district-path" d="M60,610 L215,615 L195,725 L400,730 L400,830 L60,835 Z"/>
+            <text x="135" y="785" class="district-label">DALSEO · 달서</text>
 
-            <!-- 달성군 (남단 전폭) -->
-            <path id="dalseong" class="district-path" d="M50,660 L750,660 L750,760 L50,760 Z"/>
-            <text x="400" y="717" class="district-label">DALSEONG · 달성</text>
+            <!-- 달성군 (남단 밴드) -->
+            <path id="dalseong" class="district-path" d="M60,835 L400,830 L720,835 L740,940 L60,935 Z"/>
+            <text x="400" y="895" class="district-label">DALSEONG · 달성</text>
           </g>
         </svg>
       </div>
@@ -855,7 +854,7 @@ footer.site .legal{max-width:1280px;margin:2rem auto 0;display:flex;justify-cont
         <div class="link-row">
           <a href="https://facebook.com/hopekbk" target="_blank" rel="noopener">Facebook</a>
           <a href="https://www.instagram.com/hopekbk/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.youtube.com/results?search_query=%EA%B9%80%EB%B6%80%EA%B2%B8TV" target="_blank" rel="noopener" aria-label="김부겸TV 검색(공식 채널 확인 예정)">YouTube</a>
+          <a href="https://www.youtube.com/@kimbookyum_minjoo" target="_blank" rel="noopener" aria-label="김부겸 공식 유튜브 @kimbookyum_minjoo">YouTube</a>
         </div>
         <p class="contact-footnote">@hopekbk · 김부겸TV</p>
       </div>
@@ -902,7 +901,7 @@ footer.site .legal{max-width:1280px;margin:2rem auto 0;display:flex;justify-cont
       <ul>
         <li><a href="https://facebook.com/hopekbk" target="_blank" rel="noopener">Facebook · @hopekbk</a></li>
         <li><a href="https://www.instagram.com/hopekbk/" target="_blank" rel="noopener">Instagram · @hopekbk</a></li>
-        <li><a href="https://www.youtube.com/results?search_query=%EA%B9%80%EB%B6%80%EA%B2%B8TV" target="_blank" rel="noopener" aria-label="김부겸TV 검색(공식 채널 확인 예정)">YouTube · 김부겸TV</a></li>
+        <li><a href="https://www.youtube.com/@kimbookyum_minjoo" target="_blank" rel="noopener" aria-label="김부겸 공식 유튜브 @kimbookyum_minjoo">YouTube · 김부겸TV</a></li>
         <li><a href="tel:+821031705521">전화 · 010-3170-5521</a></li>
       </ul>
     </div>
