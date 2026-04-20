@@ -120,10 +120,11 @@ nav.topnav .nav-cta:hover{background:var(--cream);color:var(--blue)}
 /* Map */
 .map-container{position:relative;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
 svg#daegu-map{width:100%;height:100%;max-width:760px;filter:drop-shadow(0 0 30px rgba(245,242,230,0.15))}
-.district-path{fill:var(--blue-deep);stroke:var(--cream);stroke-width:1.5;stroke-linejoin:miter;transition:var(--transition);cursor:pointer;transform-origin:center;outline:none}
+.district-path{fill:var(--blue-deep);stroke:var(--cream);stroke-width:1.5;stroke-linejoin:miter;transition:var(--transition);cursor:pointer;transform-origin:center;outline:none!important;-webkit-tap-highlight-color:transparent}
 .district-path:hover,.district-path.active{fill:var(--cream)}
-.district-path:focus,.district-path:focus-visible{outline:none}
+.district-path:focus,.district-path:focus-visible,.district-path:active{outline:none!important;box-shadow:none!important}
 .district-path.active{stroke-width:2.5}
+svg#daegu-map:focus,svg#daegu-map *:focus{outline:none!important}
 .district-label{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;fill:var(--cream);pointer-events:none;text-anchor:middle;letter-spacing:.05em;transition:var(--transition)}
 .district-label.small{font-size:10px}
 .district-path.active + .district-label,.district-path:hover + .district-label{fill:var(--blue-deep)}
