@@ -120,8 +120,10 @@ nav.topnav .nav-cta:hover{background:var(--cream);color:var(--blue)}
 /* Map */
 .map-container{position:relative;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
 svg#daegu-map{width:100%;height:100%;max-width:760px;filter:drop-shadow(0 0 30px rgba(245,242,230,0.15))}
-.district-path{fill:var(--blue-deep);stroke:var(--cream);stroke-width:2;stroke-linejoin:miter;transition:var(--transition);cursor:pointer;transform-origin:center}
+.district-path{fill:var(--blue-deep);stroke:var(--cream);stroke-width:1.5;stroke-linejoin:miter;transition:var(--transition);cursor:pointer;transform-origin:center;outline:none}
 .district-path:hover,.district-path.active{fill:var(--cream)}
+.district-path:focus,.district-path:focus-visible{outline:none}
+.district-path.active{stroke-width:2.5}
 .district-label{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;fill:var(--cream);pointer-events:none;text-anchor:middle;letter-spacing:.05em;transition:var(--transition)}
 .district-label.small{font-size:10px}
 .district-path.active + .district-label,.district-path:hover + .district-label{fill:var(--blue-deep)}
@@ -158,29 +160,29 @@ section.block .inner{max-width:1280px;margin:0 auto;position:relative}
 .section-ink{background:var(--ink);color:var(--cream)}
 .section-blue{background:var(--blue);color:var(--cream)}
 
-.section-head{margin-bottom:4rem;display:grid;grid-template-columns:1fr 2fr;gap:2rem;align-items:end;border-bottom:1px solid currentColor;padding-bottom:1.5rem}
-.section-head .left{display:flex;flex-direction:column;gap:.6rem}
-.section-head .counter{font-family:'Space Grotesk',monospace;font-size:.7rem;letter-spacing:.25em;opacity:.55}
+.section-head{margin-bottom:3rem;display:grid;grid-template-columns:1fr 2fr;gap:2rem;align-items:end;border-bottom:1px solid currentColor;padding-bottom:1.25rem}
+.section-head .left{display:flex;flex-direction:column;gap:.5rem}
+.section-head .counter{font-family:'Space Grotesk',monospace;font-size:.66rem;letter-spacing:.25em;opacity:.55}
 .section-head .eyebrow{opacity:.7}
-.section-head h2{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,4.5rem);line-height:.95;letter-spacing:-.01em}
-.section-head .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,1.7vw,1.4rem);max-width:520px;opacity:.85}
-@media(max-width:820px){.section-head{grid-template-columns:1fr;gap:1.2rem;margin-bottom:2.5rem}section.block{padding:5rem 1.25rem}}
+.section-head h2{font-family:'DM Serif Display',serif;font-size:clamp(1.75rem,3.2vw,2.8rem);line-height:1;letter-spacing:-.01em}
+.section-head .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.3vw,1.15rem);max-width:520px;opacity:.85;line-height:1.5}
+@media(max-width:820px){.section-head{grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}section.block{padding:4rem 1.25rem}}
 
 /* ======== STAT STRIP ======== */
 .crisis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--blue-deep)}
-.crisis-card{padding:3rem 2rem;border-right:1px solid var(--blue-deep);display:flex;flex-direction:column;gap:.7rem;position:relative;min-height:280px}
+.crisis-card{padding:1.75rem 1.4rem;border-right:1px solid var(--blue-deep);display:flex;flex-direction:column;gap:.5rem;position:relative;min-height:200px}
 .crisis-card:last-child{border-right:none}
-.crisis-card .num{font-family:'DM Serif Display',serif;font-size:clamp(3.2rem,6vw,5.2rem);line-height:1;color:var(--blue);letter-spacing:-.02em}
-.crisis-card .label{font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;margin-top:.5rem;order:2;opacity:.6}
-.crisis-card .label-ko{font-family:'Pretendard Variable',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.01em;color:var(--blue-deep);order:1}
-.crisis-card .ctx{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;opacity:.72;margin-top:auto;line-height:1.4}
-.crisis-card .tag{position:absolute;top:1rem;right:1.1rem;font-family:'Space Grotesk',monospace;font-size:.55rem;letter-spacing:.2em;opacity:.5}
+.crisis-card .num{font-family:'DM Serif Display',serif;font-size:clamp(1.85rem,3vw,2.6rem);line-height:1;color:var(--blue);letter-spacing:-.02em}
+.crisis-card .label{font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.15em;margin-top:.35rem;order:2;opacity:.55}
+.crisis-card .label-ko{font-family:'Pretendard Variable',sans-serif;font-weight:700;font-size:1rem;letter-spacing:-.01em;color:var(--blue-deep);order:1}
+.crisis-card .ctx{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;opacity:.72;margin-top:auto;line-height:1.4}
+.crisis-card .tag{position:absolute;top:.8rem;right:.9rem;font-family:'Space Grotesk',monospace;font-size:.5rem;letter-spacing:.2em;opacity:.5}
 @media(max-width:820px){.crisis-grid{grid-template-columns:1fr}.crisis-card{border-right:none;border-bottom:1px solid var(--blue-deep);min-height:auto}.crisis-card:last-child{border-bottom:none}}
 
-.manifesto{margin-top:4rem;padding:3rem;border:1px solid var(--blue-deep);position:relative;background:rgba(22,56,240,.03)}
-.manifesto::before{content:'“';position:absolute;top:-30px;left:1.8rem;font-family:'DM Serif Display',serif;font-size:8rem;color:var(--blue);line-height:1}
-.manifesto p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.15rem,2vw,1.7rem);line-height:1.5;max-width:720px;margin-left:auto;margin-right:auto;text-align:center}
-.manifesto .cite{display:block;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.2em;opacity:.55;text-align:center;text-transform:uppercase;font-style:normal}
+.manifesto{margin-top:3rem;padding:2rem 2.25rem;border:1px solid var(--blue-deep);position:relative;background:rgba(22,56,240,.03)}
+.manifesto::before{content:'“';position:absolute;top:-22px;left:1.4rem;font-family:'DM Serif Display',serif;font-size:5.5rem;color:var(--blue);line-height:1}
+.manifesto p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.45vw,1.25rem);line-height:1.5;max-width:680px;margin-left:auto;margin-right:auto;text-align:center}
+.manifesto .cite{display:block;margin-top:1rem;font-family:'Space Grotesk',sans-serif;font-size:.62rem;letter-spacing:.2em;opacity:.55;text-align:center;text-transform:uppercase;font-style:normal}
 
 /* ======== STORY TIMELINE ======== */
 .timeline{position:relative;padding-left:0}
@@ -407,41 +409,41 @@ footer.site .legal{max-width:1280px;margin:2rem auto 0;display:flex;justify-cont
         <div class="scale"><span class="bar"></span>10 KM</div>
         <svg id="daegu-map" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="대구광역시 9개 구·군 인터랙티브 지도">
           <g id="map-group">
-            <!-- 군위군 (북단) -->
-            <path id="gunwi" class="district-path" d="M290 60 L520 70 L560 180 L400 240 L250 160 Z"/>
-            <text x="400" y="150" class="district-label">GUNWI · 군위</text>
+            <!-- 군위군 (북단 전폭) -->
+            <path id="gunwi" class="district-path" d="M50,60 L750,60 L750,180 L50,180 Z"/>
+            <text x="400" y="128" class="district-label">GUNWI · 군위</text>
 
-            <!-- 북구 -->
-            <path id="buk" class="district-path" d="M250 160 L400 240 L560 180 L600 360 L450 400 L340 370 L290 290 Z"/>
-            <text x="430" y="300" class="district-label">BUK · 북구</text>
+            <!-- 북구 (중북부) -->
+            <path id="buk" class="district-path" d="M50,180 L540,180 L540,320 L50,320 Z"/>
+            <text x="295" y="258" class="district-label">BUK · 북구</text>
 
-            <!-- 동구 -->
-            <path id="dong" class="district-path" d="M560 180 L760 240 L750 470 L590 460 L600 360 Z"/>
-            <text x="660" y="340" class="district-label">DONG · 동구</text>
+            <!-- 동구 (동쪽 종단) -->
+            <path id="dong" class="district-path" d="M540,180 L750,180 L750,540 L540,540 Z"/>
+            <text x="645" y="365" class="district-label">DONG · 동구</text>
 
             <!-- 서구 -->
-            <path id="seo" class="district-path" d="M200 290 L290 290 L340 370 L290 430 L180 410 Z"/>
-            <text x="240" y="360" class="district-label">SEO · 서구</text>
+            <path id="seo" class="district-path" d="M50,320 L220,320 L220,420 L50,420 Z"/>
+            <text x="135" y="375" class="district-label">SEO · 서구</text>
 
-            <!-- 중구 -->
-            <path id="jung" class="district-path" d="M340 370 L450 400 L440 450 L360 440 L290 430 Z"/>
-            <text x="390" y="422" class="district-label small">JUNG · 중구</text>
+            <!-- 중구 (중앙 소) -->
+            <path id="jung" class="district-path" d="M220,320 L380,320 L380,420 L220,420 Z"/>
+            <text x="300" y="376" class="district-label small">JUNG · 중구</text>
+
+            <!-- 수성구 (동남 L자) -->
+            <path id="suseong" class="district-path" d="M380,320 L540,320 L540,540 L750,540 L750,660 L380,660 Z"/>
+            <text x="580" y="608" class="district-label">SUSEONG · 수성</text>
 
             <!-- 남구 -->
-            <path id="nam" class="district-path" d="M290 430 L360 440 L430 495 L380 540 L270 500 Z"/>
-            <text x="340" y="490" class="district-label small">NAM · 남구</text>
+            <path id="nam" class="district-path" d="M220,420 L380,420 L380,520 L220,520 Z"/>
+            <text x="300" y="476" class="district-label small">NAM · 남구</text>
 
-            <!-- 수성구 -->
-            <path id="suseong" class="district-path" d="M450 400 L590 460 L650 620 L460 620 L430 495 L440 450 Z"/>
-            <text x="530" y="540" class="district-label">SUSEONG · 수성</text>
+            <!-- 달서구 (서남 L자) -->
+            <path id="dalseo" class="district-path" d="M50,420 L220,420 L220,520 L380,520 L380,660 L50,660 Z"/>
+            <text x="135" y="545" class="district-label">DALSEO · 달서</text>
 
-            <!-- 달서구 -->
-            <path id="dalseo" class="district-path" d="M180 410 L290 430 L270 500 L380 540 L330 620 L150 580 L100 480 Z"/>
-            <text x="230" y="530" class="district-label">DALSEO · 달서</text>
-
-            <!-- 달성군 -->
-            <path id="dalseong" class="district-path" d="M100 480 L150 580 L330 620 L460 620 L650 620 L580 760 L330 760 L60 680 L60 500 Z"/>
-            <text x="310" y="700" class="district-label">DALSEONG · 달성</text>
+            <!-- 달성군 (남단 전폭) -->
+            <path id="dalseong" class="district-path" d="M50,660 L750,660 L750,760 L50,760 Z"/>
+            <text x="400" y="717" class="district-label">DALSEONG · 달성</text>
           </g>
         </svg>
       </div>
